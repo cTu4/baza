@@ -11,7 +11,7 @@ Ext.onReady(function () {
 			renderTo: Ext.get('table'),
 			store: userStore,
 			title: 'Видеокарты',
-			height:'100%',
+			height:'1000%',
 			columns: [
 				{
 					text: 'Производитель',

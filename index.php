@@ -4,7 +4,7 @@
 <head>
     <title>Видеокарты</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="css/theme-triton-all.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-crisp/resources/theme-crisp-all.css"/>
     <link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="ext-all-debug.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
