@@ -87,7 +87,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №1',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -133,7 +133,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №2',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 		// Круговая диаграмма объем памяти
@@ -178,7 +178,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 50,
 				height: Ext.getBody().getViewSize().height - 270,
-				title: 'Title',
+				title: 'График №3',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 
@@ -243,7 +243,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 50,
 				height: Ext.getBody().getViewSize().height - 270,
-				title: 'Title',
+				title: 'График №4',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 
@@ -308,7 +308,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №5',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -356,7 +356,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №6',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -400,7 +400,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №7',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -445,7 +445,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №8',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -489,7 +489,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'Title',
+				title: 'График №9',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
