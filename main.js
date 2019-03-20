@@ -11,7 +11,7 @@ Ext.onReady(function () {
 
 
 		var table=Ext.create('Ext.grid.Panel', {
-			renderTo: Ext.get('form'),
+			renderTo: Ext.get('table'),
 			store: userStore,
 			title: 'Видеокарты',
 			height:'1000%',
