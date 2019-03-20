@@ -136,7 +136,7 @@ Ext.onReady(function () {
 		});
 		table.show();
 
-})
+});
 
 Ext.onReady(function () {
 
