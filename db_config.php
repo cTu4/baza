@@ -1,9 +1,7 @@
 <?php
-$dbHost = "eu-cdbr-west-02.cleardb.net";
-$dbDatabase = "heroku_16503ce43a6aad8";
-$dbPasswrod = "5cdb7958d707d91";
-$dbUser = "b39b86847ed026";
+$host = 'localhost'; // адрес сервера
+$database = 'video'; // имя базы данных
+$user = 'root'; // имя пользователя
+$password = 'ko2ra6t2a'; // пароль
 
-$dbconn = mysqli_connect($dbHost, $dbUser, $dbPasswrod, $dbDatabase);
-
-?>
+$dbconn= mysqli_connect($host,$user,$password,$database);

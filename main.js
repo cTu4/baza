@@ -1,8 +1,65 @@
+
 Ext.define('User', {
 	extend: 'Ext.data.Model',
 	fields: [ 'maker','model','code','memory','freqgpu','freqmem','directx', 'monitor','interface','resolution','connection']
 });
+
+
 Ext.onReady(function () {
+
+	Ext.create('Ext.form.Panel', {
+		renderTo: Ext.get('form'),
+		title: 'Добавить видеокарту',
+		height: 400,
+		width: 300,
+		bodyPadding: 10,
+		defaultType: 'textfield',
+		items: [
+			{
+				fieldLabel: 'Производитель',
+				name: 'maker'
+			},
+			{
+				fieldLabel: 'Модель',
+				name: 'model'
+			},
+			{
+				fieldLabel: 'Код производителя',
+				name: 'code'
+			},
+			{
+				fieldLabel: 'Объем памяти',
+				name: 'code'
+			},
+			{
+				fieldLabel: 'Частота GPU',
+				name: 'freqgpu'
+			},
+			{
+				fieldLabel: 'Частота памяти',
+				name: 'freqmem'
+			},
+			{
+				fieldLabel: 'Версия DirectX',
+				name: 'directx'
+			},
+			{
+				fieldLabel: 'Кол-во мониторов',
+				name: 'monitor'
+			},
+			{
+				fieldLabel: 'Интерфейс',
+				name: 'interface'
+			},
+			{
+				fieldLabel: 'Разрешение',
+				name: 'resolution'
+			}
+		]
+	});
+
+
+
 	var userStore = Ext.create('Ext.data.Store', {
 		model: 'User',
 		data: data_table
@@ -11,7 +68,7 @@ Ext.onReady(function () {
 			renderTo: Ext.get('table'),
 			store: userStore,
 			title: 'Видеокарты',
-			height:'1000%',
+			height:'50%',
 			columns: [
 				{
 					text: 'Производитель',
@@ -74,8 +131,30 @@ Ext.onReady(function () {
 		});
 		table.show();
 
-})
+});
 
+
+Ext.onReady(function () {
+	Ext.create('Ext.Button', {
+		text: 'Отправить',
+		renderTo: Ext.get('form'),
+		width:'11%',
+		handler : function () {
+			Ext.Ajax.request({
+				url: 'baza/ajax.php',
+
+				success: function(response, opts) {
+					var obj = Ext.decode(response.responseText);
+					console.dir(obj);
+				},
+
+				failure: function(response, opts) {
+					console.log('server-side failure with status code ' + response.status);
+				}
+			});
+		}
+	});
+});
 Ext.onReady(function () {
 
 	// MAKER
@@ -87,7 +166,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №1',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -118,7 +197,7 @@ Ext.onReady(function () {
 				series: [{
 					type: 'pie',
 					name: 'Кол-во видеокарт',
-					data: data_maker
+					data: data_maker,
 				}]
 			});
 		}
@@ -133,7 +212,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №2',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 		// Круговая диаграмма объем памяти
@@ -178,7 +257,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 50,
 				height: Ext.getBody().getViewSize().height - 270,
-				title: 'График №3',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 
@@ -243,7 +322,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 50,
 				height: Ext.getBody().getViewSize().height - 270,
-				title: 'График №4',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 
@@ -308,7 +387,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №5',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -356,7 +435,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №6',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -400,7 +479,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №7',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -445,7 +524,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №8',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти
@@ -489,7 +568,7 @@ Ext.onReady(function () {
 			Ext.create('Ext.window.Window',{
 				width: Ext.getBody().getViewSize().width - 700,
 				height: Ext.getBody().getViewSize().height - 300,
-				title: 'График №9',
+				title: 'Title',
 				html: '<div id="highcharts-container"></div>',
 			}).show();
 			// Круговая диаграмма объем памяти

@@ -4,7 +4,9 @@
 <head>
     <title>Видеокарты</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!--<link rel="stylesheet" type="text/css" href="css/theme-triton-all.css"/>-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-crisp/resources/theme-crisp-all.css"/>
+
     <link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="ext-all-debug.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -12,13 +14,14 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://raw.githubusercontent.com/JoeKuan/Highcharts-Ext-JS-Adapter/master/Ext.ux.HighChart.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </head>
 <?php include "db_config.php";?>
 
 <body>
-<div  id="table" width=100%></div>
+<div  id="table"></div>
+<div  id="form"></div>
+
 </body>
 <script type="text/javascript">
     <?php
