@@ -7,6 +7,82 @@ Ext.onReady(function () {
 		model: 'User',
 		data: data_table
 	});
+
+
+	Ext.create('Ext.form.Panel', {
+		renderTo: Ext.get('form'),
+		title: 'Добавить видеокарту',
+		height: 400,
+		width: 300,
+		bodyPadding: 10,
+		defaultType: 'textfield',
+		items: [
+			{
+				fieldLabel: 'Производитель',
+				name: 'maker'
+			},
+			{
+				fieldLabel: 'Модель',
+				name: 'model'
+			},
+			{
+				fieldLabel: 'Код производителя',
+				name: 'code'
+			},
+			{
+				fieldLabel: 'Объем памяти',
+				name: 'code'
+			},
+			{
+				fieldLabel: 'Частота GPU',
+				name: 'freqgpu'
+			},
+			{
+				fieldLabel: 'Частота памяти',
+				name: 'freqmem'
+			},
+			{
+				fieldLabel: 'Версия DirectX',
+				name: 'directx'
+			},
+			{
+				fieldLabel: 'Кол-во мониторов',
+				name: 'monitor'
+			},
+			{
+				fieldLabel: 'Интерфейс',
+				name: 'interface'
+			},
+			{
+				fieldLabel: 'Разрешение',
+				name: 'resolution'
+			}
+		]
+	});
+
+
+
+	Ext.create('Ext.Button', {
+		text: 'Отправить',
+		renderTo: Ext.get('form'),
+		width:'11%',
+		handler : function () {
+			Ext.Ajax.request({
+				url: 'ajax_demo/sample.json',
+
+				success: function(response, opts) {
+					var obj = Ext.decode(response.responseText);
+					console.dir(obj);
+				},
+
+				failure: function(response, opts) {
+					console.log('server-side failure with status code ' + response.status);
+				}
+			});
+		}
+	});
+
+
 		var table=Ext.create('Ext.grid.Panel', {
 			renderTo: Ext.get('table'),
 			store: userStore,

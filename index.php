@@ -19,6 +19,7 @@
 
 <body>
 <div  id="table" width=100%></div>
+<div  id="form" width=100%></div>
 </body>
 <script type="text/javascript">
     <?php
