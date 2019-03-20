@@ -65,21 +65,7 @@ Ext.onReady(function () {
 	Ext.create('Ext.Button', {
 		text: 'Отправить',
 		renderTo: Ext.get('form'),
-		width:'11%',
-		handler : function () {
-			Ext.Ajax.request({
-				url: 'ajax_demo/sample.json',
-
-				success: function(response, opts) {
-					var obj = Ext.decode(response.responseText);
-					console.dir(obj);
-				},
-
-				failure: function(response, opts) {
-					console.log('server-side failure with status code ' + response.status);
-				}
-			});
-		}
+		width:'11%'
 	});
 
 
