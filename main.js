@@ -375,7 +375,7 @@ Ext.onReady(function () {
 
 
 
-	/*var userStore = Ext.create('Ext.data.Store', {
+	var userStore = Ext.create('Ext.data.Store', {
 		model: 'User',
 		data: data_table
 	});
@@ -444,7 +444,7 @@ Ext.onReady(function () {
 				},
 			]
 		});
-		table.show();*/
+		table.show();
 
 });
 
