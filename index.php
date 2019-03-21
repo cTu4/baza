@@ -21,7 +21,6 @@
 <body>
 <div  id="table"></div>
 <div  id="form"></div>
-<div class="wrapper">
     <div id="highcharts-maker"></div>
     <div id="highcharts-memory"></div>
     <div id="highcharts-freqmem"></div>
@@ -31,9 +30,6 @@
     <div id="highcharts-interface"></div>
     <div id="highcharts-resolution"></div>
     <div id="highcharts-connection"></div>
-</div>
-
-
 </body>
 <script type="text/javascript">
     <?php

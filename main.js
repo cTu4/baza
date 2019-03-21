@@ -11,6 +11,7 @@ Ext.onReady(function () {
 	Highcharts.chart('highcharts-maker', {
 		chart: {
 			type: 'pie',
+			width: 400,
 			options3d: {
 				enabled: true,
 				alpha: 45,
