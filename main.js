@@ -457,6 +457,11 @@ Ext.onReady(function () {
 		handler : function () {
 			Ext.Ajax.request({
 				url: 'ajax.php',
+				method:'POST',
+				params: {
+					maker_id: 3,code: "DDDD",memory:6,freqgpu:1200,freqmem:1400,interface_id:2,directx:10,
+					resolution_id:2,monitor:4,connection_id:2,model_id:1
+				},
 
 				success: function() {
 					alert('success');
