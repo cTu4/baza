@@ -456,15 +456,14 @@ Ext.onReady(function () {
 		width:'100%',
 		handler : function () {
 			Ext.Ajax.request({
-				url: 'site/ajax.php',
+				url: 'ajax.php',
 
-				success: function(response, opts) {
-					var obj = Ext.decode(response.responseText);
-					console.dir(obj);
+				success: function() {
+					alert('success');
 				},
 
-				failure: function(response, opts) {
-					console.log('server-side failure with status code ' + response.status);
+				failure: function() {
+					alert('fail');
 				}
 			});
 		}
