@@ -6,6 +6,10 @@
     <script src="test.js"></script> <!-- Подключаем сценарии -->
     <script type="text/javascript" src="ext-all-debug.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 
 </head>
 <body> <!-- Основная часть документа -->
