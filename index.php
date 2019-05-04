@@ -20,16 +20,10 @@
 
 <body>
 <div  id="table"></div>
+<div id="graph"></div>
 <div  id="form"></div>
-    <div id="highcharts-maker"></div>
-    <div id="highcharts-memory"></div>
-    <div id="highcharts-freqmem"></div>
-    <div id="highcharts-freqgpu"></div>
-    <div id="highcharts-directx"></div>
-    <div id="highcharts-monitor"></div>
-    <div id="highcharts-interface"></div>
-    <div id="highcharts-resolution"></div>
-    <div id="highcharts-connection"></div>
+
+
 </body>
 <script type="text/javascript">
     <?php

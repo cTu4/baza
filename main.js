@@ -6,12 +6,35 @@ Ext.define('User', {
 
 
 Ext.onReady(function () {
+	Ext.create('Ext.panel.Panel', {
+		renderTo: Ext.get('graph'),
+		width: '100%',
+		height: 4000,
+		bodyPadding: '10 30',
+		title: 'Графики',
+		layout: {
+			type: 'vbox',
+			align : 'stretch',
+			pack  : 'start',
+		},
+		items: [
+			{html:'panel 1', flex:1, height: 100, padding: '10 40'},
+			{html:'panel 2', flex:1, height: 400, padding: '10 40'},
+			{html:'panel 3', flex:1, height: 300, padding: '10 40'},
+			{html:'panel 4', flex:1, height: 400, padding: '10 40'},
+			{html:'panel 5', flex:1, height: 400, padding: '10 40'},
+			{html:'panel 6', flex:1, height: 400, padding: '10 40'},
+			{html:'panel 7', flex:1, height: 400, padding: '10 40'},
+			{html:'panel 8', flex:1, height: 400, padding: '10 40'},
+			{html:'panel 9', flex:1, height: 400, padding: '10 40'},
 
+		]
 
-	Highcharts.chart('highcharts-maker', {
+	});
+
+	Highcharts.chart('panel-1010', {
 		chart: {
 			type: 'pie',
-			width: 400,
 			options3d: {
 				enabled: true,
 				alpha: 45,
@@ -39,7 +62,7 @@ Ext.onReady(function () {
 		}]
 	});
 
-	Highcharts.chart('highcharts-memory', {
+	Highcharts.chart('panel-1011', {
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: null,
@@ -69,7 +92,7 @@ Ext.onReady(function () {
 	});
 
 
-	Highcharts.chart('highcharts-freqmem', {
+	Highcharts.chart('panel-1012', {
 		chart: {
 			type: 'column'
 		},
@@ -116,7 +139,7 @@ Ext.onReady(function () {
 
 
 
-	Highcharts.chart('highcharts-freqgpu', {
+	Highcharts.chart('panel-1013', {
 		chart: {
 			type: 'column'
 		},
@@ -163,7 +186,7 @@ Ext.onReady(function () {
 	});
 
 
-	Highcharts.chart('highcharts-directx', {
+	Highcharts.chart('panel-1014', {
 		chart: {
 			type: 'pie',
 			options3d: {
@@ -196,7 +219,7 @@ Ext.onReady(function () {
 	});
 
 
-	Highcharts.chart('highcharts-monitor', {
+	Highcharts.chart('panel-1015', {
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: null,
@@ -226,7 +249,7 @@ Ext.onReady(function () {
 	});
 
 
-	Highcharts.chart('highcharts-interface', {
+	Highcharts.chart('panel-1016', {
 		chart: {
 			type: 'pie',
 			options3d: {
@@ -255,7 +278,7 @@ Ext.onReady(function () {
 	});
 
 
-	Highcharts.chart('highcharts-resolution', {
+	Highcharts.chart('panel-1017', {
 		chart: {
 			type: 'pie',
 			options3d: {
@@ -284,7 +307,7 @@ Ext.onReady(function () {
 	});
 
 
-	Highcharts.chart('highcharts-connection', {
+	Highcharts.chart('panel-1018', {
 		chart: {
 			type: 'pie',
 			options3d: {
@@ -313,65 +336,7 @@ Ext.onReady(function () {
 	});
 
 
-	Ext.create('Ext.form.Panel', {
-		renderTo: Ext.get('form'),
-		title: 'Добавить видеокарту',
-		width: '100%',
-		bodyPadding: 10,
-		defaultType: 'textfield',
-		items: [
-			{
-				fieldLabel: 'Производитель',
-				flex:1,
-				name: 'maker'
-			},
-			{
-				fieldLabel: 'Модель',
-				flex:1,
-				name: 'model'
-			},
-			{
-				fieldLabel: 'Код производителя',
-				flex:1,
-				name: 'code'
-			},
-			{
-				fieldLabel: 'Объем памяти',
-				flex:1,
-				name: 'code'
-			},
-			{
-				fieldLabel: 'Частота GPU',
-				flex:1,
-				name: 'freqgpu'
-			},
-			{
-				fieldLabel: 'Частота памяти',
-				flex:1,
-				name: 'freqmem'
-			},
-			{
-				fieldLabel: 'Версия DirectX',
-				flex:1,
-				name: 'directx'
-			},
-			{
-				fieldLabel: 'Кол-во мониторов',
-				flex:1,
-				name: 'monitor'
-			},
-			{
-				fieldLabel: 'Интерфейс',
-				flex:1,
-				name: 'interface'
-			},
-			{
-				fieldLabel: 'Разрешение',
-				flex:1,
-				name: 'resolution'
-			}
-		]
-	});
+
 
 
 
@@ -383,6 +348,9 @@ Ext.onReady(function () {
 			renderTo: Ext.get('table'),
 			store: userStore,
 			title: 'Видеокарты',
+			margin: 10,
+			border: true,
+			style: 'border: solid #83B2EA 1px',
 			height:'50%',
 			columns: [
 				{
@@ -448,26 +416,83 @@ Ext.onReady(function () {
 
 });
 
-
 Ext.onReady(function () {
+	Ext.create('Ext.form.Panel', {
+		renderTo: Ext.get('form'),
+		title: 'Добавить видеокарту',
+		width: 300,
+		bodyPadding: 10,
+		defaultType: 'textfield',
+		items: [
+			{
+				fieldLabel: 'Производитель',
+				flex:1,
+				name: 'maker'
+			},
+			{
+				fieldLabel: 'Модель',
+				flex:1,
+				name: 'model'
+			},
+			{
+				fieldLabel: 'Код производителя',
+				flex:1,
+				name: 'code'
+			},
+			{
+				fieldLabel: 'Объем памяти',
+				flex:1,
+				name: 'code'
+			},
+			{
+				fieldLabel: 'Частота GPU',
+				flex:1,
+				name: 'freqgpu'
+			},
+			{
+				fieldLabel: 'Частота памяти',
+				flex:1,
+				name: 'freqmem'
+			},
+			{
+				fieldLabel: 'Версия DirectX',
+				flex:1,
+				name: 'directx'
+			},
+			{
+				fieldLabel: 'Кол-во мониторов',
+				flex:1,
+				name: 'monitor'
+			},
+			{
+				fieldLabel: 'Интерфейс',
+				flex:1,
+				name: 'interface'
+			},
+			{
+				fieldLabel: 'Разрешение',
+				flex:1,
+				name: 'resolution'
+			}
+		]
+	});
+
 	Ext.create('Ext.Button', {
 		text: 'Отправить',
 		renderTo: Ext.get('form'),
-		width:'100%',
+		width: 300,
 		handler : function () {
+			var rolename = 'myRol';
 			Ext.Ajax.request({
 				url: 'ajax.php',
-				method:'POST',
+				method: 'POST',
 				params: {
-					maker_id: 3,code: "DDDD",memory:6,freqgpu:1200,freqmem:1400,interface_id:2,directx:10,
-					resolution_id:2,monitor:4,connection_id:2,model_id:1
+					rolename: rolename
 				},
-
-				success: function() {
+				success: function () {
 					alert('success');
 				},
-
-				failure: function() {
+				failure: function(){
 					alert('fail');
 				}
 			});

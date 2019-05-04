@@ -14,6 +14,5 @@
 </head>
 <body> <!-- Основная часть документа -->
 <div id="tabpanel"></div>
-
 </body>
 </html>

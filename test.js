@@ -7,7 +7,7 @@ Ext.define('User', {
 Ext.onReady(function () {
 
 
-    Highcharts.chart('highcharts-maker', {
+    Highcharts.chart('tabpanel', {
         chart: {
             type: 'pie',
             width: 400,
