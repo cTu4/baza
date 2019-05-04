@@ -37,3 +37,4 @@ Ext.onReady(function () {
             data: data_maker,
         }]
     });
+});
