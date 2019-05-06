@@ -6,6 +6,13 @@ Ext.define('User', {
 
 
 Ext.onReady(function () {
+
+
+	var userStore = Ext.create('Ext.data.Store', {
+		model: 'User',
+		data: data_table
+	});
+
 	Ext.create('Ext.panel.Panel', {
 		renderTo: Ext.get('graph'),
 		width: '100%',
@@ -31,6 +38,165 @@ Ext.onReady(function () {
 		]
 
 	});
+
+
+	Ext.create({
+
+		xtype: 'tabpanel',
+		renderTo: Ext.get('Tab'),
+		margin: 20,
+		width: '100%',
+		// TabPanel child items are of type 'Panel' by default
+		items: [
+			{
+				xtype: 'panel',
+				title: 'Добавить видеокарту',
+				width: 300,
+				bodyPadding: 10,
+				defaultType: 'textfield',
+				items: [
+					{
+						fieldLabel: 'Производитель',
+						flex:1,
+						name: 'maker'
+					},
+					{
+						fieldLabel: 'Модель',
+						flex:1,
+						name: 'model'
+					},
+					{
+						fieldLabel: 'Код производителя',
+						flex:1,
+						name: 'code'
+					},
+					{
+						fieldLabel: 'Объем памяти',
+						flex:1,
+						name: 'code'
+					},
+					{
+						fieldLabel: 'Частота GPU',
+						flex:1,
+						name: 'freqgpu'
+					},
+					{
+						fieldLabel: 'Частота памяти',
+						flex:1,
+						name: 'freqmem'
+					},
+					{
+						fieldLabel: 'Версия DirectX',
+						flex:1,
+						name: 'directx'
+					},
+					{
+						fieldLabel: 'Кол-во мониторов',
+						flex:1,
+						name: 'monitor'
+					},
+					{
+						fieldLabel: 'Интерфейс',
+						flex:1,
+						name: 'interface'
+					},
+					{
+						fieldLabel: 'Разрешение',
+						flex:1,
+						name: 'resolution'
+					},
+					{
+						xtype: 'button',
+						text: 'Отправить',
+						width: 300,
+						handler : function () {
+							var rolename = 'myRol';
+							Ext.Ajax.request({
+								url: 'ajax.php',
+								method: 'POST',
+								params: {
+									rolename: rolename
+								},
+								success: function () {
+									alert('success');
+								},
+								failure: function(){
+									alert('fail');
+								}
+							});
+						}
+					}
+				]
+			},
+			{
+				xtype: 'grid',
+				store: userStore,
+				title: 'Видеокарты',
+				margin: 10,
+				border: true,
+				columns: [
+					{
+						text: 'Производитель',
+						width: '6%',
+						sortable: true,
+						hideable: true,
+						dataIndex: 'maker'
+					},
+					{
+						text: 'Модель',
+						width: '10%',
+						dataIndex: 'model',
+					},
+					{
+						text: 'Код производителя',
+						width:'12%',
+						dataIndex: 'code'
+					},
+					{
+						text: 'Объем памяти',
+						flex: 1,
+						dataIndex: 'memory'
+					},
+					{
+						text: 'Частота GPU',
+						flex: 1,
+						dataIndex: 'freqgpu'
+					},
+					{
+						text: 'Частота памяти',
+						flex: 1,
+						dataIndex: 'freqmem'
+					},
+					{
+						text: 'Версия directX',
+						flex: 1,
+						dataIndex: 'directx'
+					},
+					{
+						text: 'Кол-во мониторов',
+						flex: 1,
+						dataIndex: 'monitor'
+					},
+					{
+						text: 'Интерфейс',
+						flex: 1,
+						dataIndex: 'interface'
+					},
+					{
+						text: 'Максимальное разрешение',
+						flex: 1,
+						dataIndex: 'resolution'
+					},
+					{
+						text: 'Подключение',
+						flex: 1,
+						dataIndex: 'connection'
+					},
+				]
+			}
+		]
+	});
+
 
 	Highcharts.chart('panel-1010', {
 		chart: {
@@ -340,11 +506,8 @@ Ext.onReady(function () {
 
 
 
-	var userStore = Ext.create('Ext.data.Store', {
-		model: 'User',
-		data: data_table
-	});
-		var table=Ext.create('Ext.grid.Panel', {
+
+		/*var table=Ext.create('Ext.grid.Panel', {
 			renderTo: Ext.get('table'),
 			store: userStore,
 			title: 'Видеокарты',
@@ -412,92 +575,8 @@ Ext.onReady(function () {
 				},
 			]
 		});
-		table.show();
+		table.show();*/
 
-});
-
-Ext.onReady(function () {
-	Ext.create('Ext.form.Panel', {
-		renderTo: Ext.get('form'),
-		title: 'Добавить видеокарту',
-		width: 300,
-		bodyPadding: 10,
-		defaultType: 'textfield',
-		items: [
-			{
-				fieldLabel: 'Производитель',
-				flex:1,
-				name: 'maker'
-			},
-			{
-				fieldLabel: 'Модель',
-				flex:1,
-				name: 'model'
-			},
-			{
-				fieldLabel: 'Код производителя',
-				flex:1,
-				name: 'code'
-			},
-			{
-				fieldLabel: 'Объем памяти',
-				flex:1,
-				name: 'code'
-			},
-			{
-				fieldLabel: 'Частота GPU',
-				flex:1,
-				name: 'freqgpu'
-			},
-			{
-				fieldLabel: 'Частота памяти',
-				flex:1,
-				name: 'freqmem'
-			},
-			{
-				fieldLabel: 'Версия DirectX',
-				flex:1,
-				name: 'directx'
-			},
-			{
-				fieldLabel: 'Кол-во мониторов',
-				flex:1,
-				name: 'monitor'
-			},
-			{
-				fieldLabel: 'Интерфейс',
-				flex:1,
-				name: 'interface'
-			},
-			{
-				fieldLabel: 'Разрешение',
-				flex:1,
-				name: 'resolution'
-			}
-		]
-	});
-
-	Ext.create('Ext.Button', {
-		text: 'Отправить',
-		renderTo: Ext.get('form'),
-		width: 300,
-		handler : function () {
-			var rolename = 'myRol';
-			Ext.Ajax.request({
-				url: 'ajax.php',
-				method: 'POST',
-				params: {
-					rolename: rolename
-				},
-				success: function () {
-					alert('success');
-				},
-				failure: function(){
-					alert('fail');
-				}
-			});
-		}
-	});
 });
 
 /*
