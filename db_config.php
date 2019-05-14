@@ -1,9 +1,8 @@
 <?php
-$dbHost = "eu-cdbr-west-02.cleardb.net";
-$dbDatabase = "heroku_16503ce43a6aad8";
-$dbPasswrod = "5cdb7958d707d91";
-$dbUser = "b39b86847ed026";
+$host = "eu-cdbr-west-02.cleardb.net";
+$database = "heroku_16503ce43a6aad8";
+$passwrod = "5cdb7958d707d91";
+$user = "b39b86847ed026";
 
-$dbconn = mysqli_connect($dbHost, $dbUser, $dbPasswrod, $dbDatabase);
-
+$mysqli = new mysqli($host, $user, $password,$database);
 ?>
