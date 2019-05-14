@@ -29,8 +29,8 @@
 </body>
 <script type="text/javascript">
     <?php
-    $sql="select maker,model,code,memory,freqgpu,freqmem,directx,monitor,interface,resolution,connection from videocards inner join makers on videocards.maker_id=makers.maker_id inner join models on videocards.model_id=models.model_id inner join interface on videocards.interface_id=interface.interface_id inner join resolution on videocards.resolution_id=resolution.resolution_id inner join connection on videocards.connection_id=connection.connection_id";
-    $table = mysqli_query($dbconn,$sql);
+    $sql="select maker,model,code,memory,freqgpu,freqmem,directx,monitor,interface,resolution,connection from video.videocards inner join makers on videocards.maker_id=makers.maker_id inner join models on videocards.model_id=models.model_id inner join interface on videocards.interface_id=interface.interface_id inner join resolution on videocards.resolution_id=resolution.resolution_id inner join connection on videocards.connection_id=connection.connection_id";
+    $table = mysqli_query($mysqli,$sql);
     $table = mysqli_fetch_all($table);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -54,7 +54,7 @@
     //maker
     <?php
     $sql = "select DISTINCT maker, COUNT(maker) as count from videocards inner join makers on videocards.maker_id=makers.maker_id GROUP BY maker";
-    $maker = mysqli_query($dbconn,$sql);
+    $maker = mysqli_query($mysqli,$sql);
     $maker = mysqli_fetch_all($maker);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -73,7 +73,7 @@
     //memory
     <?php
     $sql = "select DISTINCT memory, COUNT(memory) as count from videocards GROUP BY memory";
-    $mem = mysqli_query($dbconn,$sql);
+    $mem = mysqli_query($mysqli,$sql);
     $mem = mysqli_fetch_all($mem);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -90,7 +90,7 @@
     // interface
     <?php
     $sql = "select DISTINCT interface, COUNT(interface) as count from videocards inner join interface on videocards.interface_id=interface.interface_id GROUP BY interface";
-    $interface = mysqli_query($dbconn,$sql);
+    $interface = mysqli_query($mysqli,$sql);
     $interface = mysqli_fetch_all($interface);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -108,7 +108,7 @@
     // freqmem
     <?php
     $sql = "select code,freqmem from videocards order by freqmem";
-    $viewer = mysqli_query($dbconn,$sql);
+    $viewer = mysqli_query($mysqli,$sql);
     $viewer = mysqli_fetch_all($viewer);
     $viewer = json_encode($viewer,JSON_NUMERIC_CHECK);
     ?>
@@ -118,7 +118,7 @@
     // freqgpu
     <?php
     $sql = "select code,freqgpu from videocards order by freqgpu";
-    $freqgpu = mysqli_query($dbconn,$sql);
+    $freqgpu = mysqli_query($mysqli,$sql);
     $freqgpu = mysqli_fetch_all($freqgpu);
     $freqgpu = json_encode($freqgpu,JSON_NUMERIC_CHECK);
     ?>
@@ -129,7 +129,7 @@
     // DirectX
     <?php
     $sql = "select DISTINCT directx, COUNT(directx) as count from videocards GROUP BY directx";
-    $directx = mysqli_query($dbconn,$sql);
+    $directx = mysqli_query($mysqli,$sql);
     $directx = mysqli_fetch_all($directx);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -146,7 +146,7 @@
     // monitor
     <?php
     $sql = "select DISTINCT monitor, COUNT(monitor) as count from videocards GROUP BY monitor";
-    $monitor = mysqli_query($dbconn,$sql);
+    $monitor = mysqli_query($mysqli,$sql);
     $monitor = mysqli_fetch_all($monitor);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -163,7 +163,7 @@
     //resolution
     <?php
     $sql = "select DISTINCT resolution, COUNT(resolution) as count from videocards inner join resolution on videocards.resolution_id=resolution.resolution_id GROUP BY resolution";
-    $resolution = mysqli_query($dbconn,$sql);
+    $resolution = mysqli_query($mysqli,$sql);
     $resolution = mysqli_fetch_all($resolution);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -175,13 +175,13 @@
     $js = json_encode($arr, JSON_NUMERIC_CHECK);
     ?>
     var data_resolution = JSON.parse('<?= $js; ?>');
-    console.log(data_interface);
+    //console.log(data_interface);
 
 
     //connection
     <?php
     $sql = "select DISTINCT connection, COUNT(connection) as count from videocards inner join connection on videocards.connection_id=connection.connection_id GROUP BY connection";
-    $connection = mysqli_query($dbconn,$sql);
+    $connection = mysqli_query($mysqli,$sql);
     $connection = mysqli_fetch_all($connection);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
     $arr = [];
@@ -193,6 +193,6 @@
     $js = json_encode($arr, JSON_NUMERIC_CHECK);
     ?>
     var data_connection = JSON.parse('<?= $js; ?>');
-    console.log(data_interface);
+    //console.log(data_interface);
 </script>
 </html>

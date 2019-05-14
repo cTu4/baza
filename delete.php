@@ -1,90 +1,9 @@
 <?php
 include "db_config.php";
-//var_dump($_POST);die;
-$maker_id=0;
-$interface_id=0;
-$resolution_id=0;
-$connection_id=0;
-$model_id=0;
-switch ($_POST['maker']) {
-    case 'gigabyte':
-        $maker_id=1;
-        break;
-    case 'asus':
-        $maker_id=3;
-        break;
-    case 'palit':
-        $maker_id=2;
-        break;
-}
-switch ($_POST['interface']){
-    case 'ddr3':
-        $interface_id=1;
-        break;
-    case 'ddr4':
-        $interface_id=2;
-        break;
-    case 'ddr5':
-        $interface_id=3;
-        break;
-    case 'ddr6':
-        $interface_id=4;
-        break;
-}
-switch ($_POST['connection']){
-    case 'pci-e v.2':
-        $connection_id=1;
-        break;
-    case 'pci-e v.3':
-        $connection_id=2;
-        break;
-}
-switch ($_POST['resolution']){
-    case '2560x1600':
-        $resolution_id=1;
-        break;
-    case '4096x2160':
-        $resolution_id=2;
-        break;
-    case '7680x4320':
-        $resolution_id=4;
-        break;
-}
-switch ($_POST['model']){
-    case 'geforce rtx 2080':
-        $model_id=1;
-        break;
-    case 'geforce rtx 2070':
-        $model_id=2;
-        break;
-    case 'geforce gtx 1080':
-        $model_id=3;
-        break;
-    case 'geforce gtx 1080 ti':
-        $model_id=4;
-        break;
-    case 'geforce gtx 1070':
-        $model_id=5;
-        break;
-    case 'geforce gtx 260':
-        $model_id=6;
-        break;
-    case 'geforce gtx 960':
-        $model_id=7;
-        break;
-    case 'geforce gtx 650':
-        $model_id=8;
-        break;
+$sql="delete from video.videocards where code='".$_POST['code']."'";
+if ($mysqli->query($sql)) {
 }
 
-$sql="insert into video.videocards values ('".$_POST['code']."',".(int)$maker_id.",".(int)$_POST['memory'].",".(int)$_POST['freqgpu'].",".(int)$_POST['freqmem'].",".(int)$interface_id.",".(int)$_POST['directx'].",".(int)$resolution_id.",".(int)$_POST['monitor'].",".(int)$connection_id.",".(int)$model_id.")";
-if ($mysqli->connect_errno) {
-    var_dump('Не подключились!');
-    die;
-}
-if (!$mysqli->query($sql)) {
-
-}
 $arr_main = [];
 
 
@@ -179,24 +98,3 @@ foreach($connection as $key => $val)
 array_push($arr_main,[$arr_maker,$arr_memory, $arr_interface,$freqmem,$freqgpu,$arr_directx,$arr_monitor,$arr_resolution,$arr_conn]);
 
 echo json_encode($arr_main, JSON_NUMERIC_CHECK);
-
-
-
-
-
-/*
-$code=$_POST['code'];
-$maker_id=$_POST['maker_id'];
-$memory=$_POST['memory'];
-$freqgpu=$_POST['freqgpu'];
-$freqmem=$_POST['freqmem'];
-$interface_id=$_POST['interface_id'];
-$directx=$_POST['directx'];
-$resolution_id=$_POST['resolution_id'];
-$monitor=$_POST['monitor'];
-$connection_id=$_POST['connection_id'];
-$model_id=$_POST['model_id'];*/
-/*
-$sql="insert into video values("."'$code',"."$maker_id,"."$memory,"."$freqgpu,"."$freqmem,"."$interface_id,"."$directx,"."$resolution_id,"."$monitor,"."$connection_idm,"."$model_id".")";
-$table = mysqli_query($dbconn,$sql);*/
-
