@@ -1,6 +1,6 @@
 <?php
 include "db_config.php";
-$sql="delete from videocards where code='".$_POST['code']."'";
+$sql="delete from heroku_16503ce43a6aad8.videocards where code='".$_POST['code']."'";
 if ($mysqli->query($sql)) {
 }
 
@@ -8,7 +8,7 @@ $arr_main = [];
 
 
 // maker
-$sql = "select DISTINCT maker, COUNT(maker) as count from videocards inner join makers on videocards.maker_id=makers.maker_id GROUP BY maker";
+$sql = "select DISTINCT maker, COUNT(maker) as count from heroku_16503ce43a6aad8.videocards inner join makers on heroku_16503ce43a6aad8.videocards.maker_id=makers.maker_id GROUP BY maker";
 $maker = mysqli_query($mysqli,$sql);
 $maker = mysqli_fetch_all($maker);
 $arr_maker = [];
@@ -18,7 +18,7 @@ foreach($maker as $key => $val)
 }
 
 //  memory
-$sql = "select DISTINCT memory, COUNT(memory) as count from videocards GROUP BY memory";
+$sql = "select DISTINCT memory, COUNT(memory) as count from heroku_16503ce43a6aad8.videocards GROUP BY memory";
 $mem = mysqli_query($mysqli,$sql);
 $mem = mysqli_fetch_all($mem);
 //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
@@ -29,7 +29,7 @@ foreach($mem as $key => $val)
 }
 
 // interface
-$sql = "select DISTINCT interface, COUNT(interface) as count from videocards inner join interface on videocards.interface_id=interface.interface_id GROUP BY interface";
+$sql = "select DISTINCT interface, COUNT(interface) as count from heroku_16503ce43a6aad8.videocards inner join interface on heroku_16503ce43a6aad8.videocards.interface_id=interface.interface_id GROUP BY interface";
 $interface = mysqli_query($mysqli,$sql);
 $interface = mysqli_fetch_all($interface);
 //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
@@ -41,19 +41,19 @@ foreach($interface as $key => $val)
 
 
 //freqmem
-$sql = "select code,freqmem from videocards order by freqmem";
+$sql = "select code,freqmem from heroku_16503ce43a6aad8.videocards order by freqmem";
 $freqmem = mysqli_query($mysqli,$sql);
 $freqmem = mysqli_fetch_all($freqmem);
 
 
 //freqgpu
-$sql = "select code,freqgpu from videocards order by freqgpu";
+$sql = "select code,freqgpu from heroku_16503ce43a6aad8.videocards order by freqgpu";
 $freqgpu = mysqli_query($mysqli,$sql);
 $freqgpu = mysqli_fetch_all($freqgpu);
 
 
 //directx
-$sql = "select DISTINCT directx, COUNT(directx) as count from videocards GROUP BY directx";
+$sql = "select DISTINCT directx, COUNT(directx) as count from heroku_16503ce43a6aad8.videocards GROUP BY directx";
 $directx = mysqli_query($mysqli,$sql);
 $directx = mysqli_fetch_all($directx);
 $arr_directx = [];
@@ -64,7 +64,7 @@ foreach($directx as $key => $val)
 
 
 //monitor
-$sql = "select DISTINCT monitor, COUNT(monitor) as count from videocards GROUP BY monitor";
+$sql = "select DISTINCT monitor, COUNT(monitor) as count from heroku_16503ce43a6aad8.videocards GROUP BY monitor";
 $monitor = mysqli_query($mysqli,$sql);
 $monitor = mysqli_fetch_all($monitor);
 //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
@@ -75,7 +75,7 @@ foreach($monitor as $key => $val)
 }
 
 //resolution
-$sql = "select DISTINCT resolution, COUNT(resolution) as count from videocards inner join resolution on videocards.resolution_id=resolution.resolution_id GROUP BY resolution";
+$sql = "select DISTINCT resolution, COUNT(resolution) as count from heroku_16503ce43a6aad8.videocards inner join resolution on heroku_16503ce43a6aad8.videocards.resolution_id=resolution.resolution_id GROUP BY resolution";
 $resolution = mysqli_query($mysqli,$sql);
 $resolution = mysqli_fetch_all($resolution);
 //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
@@ -86,7 +86,7 @@ foreach($resolution as $key => $val)
 }
 
 // connection
-$sql = "select DISTINCT connection, COUNT(connection) as count from videocards inner join connection on videocards.connection_id=connection.connection_id GROUP BY connection";
+$sql = "select DISTINCT connection, COUNT(connection) as count from heroku_16503ce43a6aad8.videocards inner join connection on heroku_16503ce43a6aad8.videocards.connection_id=connection.connection_id GROUP BY connection";
 $connection = mysqli_query($mysqli,$sql);
 $connection = mysqli_fetch_all($connection);
 //$mem = json_encode($mem, JSON_NUMERIC_CHECK);
