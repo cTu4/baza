@@ -6,7 +6,6 @@ Ext.define('User', {
 
 
 Ext.onReady(function () {
-	alert('asf');
 
 	var userStore = Ext.create('Ext.data.Store', {
 		model: 'User',
