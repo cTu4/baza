@@ -4,6 +4,7 @@ $sql="delete from videocards where code='".$_POST['code']."'";
 if ($mysqli->query($sql)) {
 }
 
+
 $arr_main = [];
 
 
