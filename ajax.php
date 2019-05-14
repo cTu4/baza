@@ -77,7 +77,7 @@ switch ($_POST['model']){
         break;
 }
 
-$sql="insert into video.videocards values ('".$_POST['code']."',".(int)$maker_id.",".(int)$_POST['memory'].",".(int)$_POST['freqgpu'].",".(int)$_POST['freqmem'].",".(int)$interface_id.",".(int)$_POST['directx'].",".(int)$resolution_id.",".(int)$_POST['monitor'].",".(int)$connection_id.",".(int)$model_id.")";
+$sql="insert into videocards values ('".$_POST['code']."',".(int)$maker_id.",".(int)$_POST['memory'].",".(int)$_POST['freqgpu'].",".(int)$_POST['freqmem'].",".(int)$interface_id.",".(int)$_POST['directx'].",".(int)$resolution_id.",".(int)$_POST['monitor'].",".(int)$connection_id.",".(int)$model_id.")";
 if ($mysqli->connect_errno) {
     var_dump('Не подключились!');
     die;

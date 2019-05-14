@@ -29,7 +29,7 @@
 </body>
 <script type="text/javascript">
     <?php
-    $sql="select maker,model,code,memory,freqgpu,freqmem,directx,monitor,interface,resolution,connection from video.videocards inner join makers on videocards.maker_id=makers.maker_id inner join models on videocards.model_id=models.model_id inner join interface on videocards.interface_id=interface.interface_id inner join resolution on videocards.resolution_id=resolution.resolution_id inner join connection on videocards.connection_id=connection.connection_id";
+    $sql="select maker,model,code,memory,freqgpu,freqmem,directx,monitor,interface,resolution,connection from videocards inner join makers on videocards.maker_id=makers.maker_id inner join models on videocards.model_id=models.model_id inner join interface on videocards.interface_id=interface.interface_id inner join resolution on videocards.resolution_id=resolution.resolution_id inner join connection on videocards.connection_id=connection.connection_id";
     $table = mysqli_query($mysqli,$sql);
     $table = mysqli_fetch_all($table);
     //$mem = json_encode($mem, JSON_NUMERIC_CHECK);

@@ -1,6 +1,6 @@
 <?php
 include "db_config.php";
-$sql="delete from video.videocards where code='".$_POST['code']."'";
+$sql="delete from videocards where code='".$_POST['code']."'";
 if ($mysqli->query($sql)) {
 }
 
